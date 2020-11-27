@@ -16,7 +16,7 @@ button { cursor: pointer; outline: none; }
 
 .sbs { display: flex; justify-content: center; }
 .sbs section { width: 56.25vh; max-width: 1012.5px; flex-shrink: 0; }
-.sbs .video-section video { max-width: 56.25vh; }
+.sbs .video-section video { max-width: 100%; }
 .sbs .open-text-btn { display: none; }
 @media screen and (min-height: 1801px) { .sbs section { width: 1012.5px; } }
 @media screen and (max-height: 599px) { .sbs section { width: 337.5px; } }

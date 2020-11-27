@@ -7,12 +7,12 @@
         portraitTypeMainWidth = 'portrait-screen-width',
         portraitTypeMainHeight = 'portrait-screen-height',
         portraitModeType;
-    
-    window.addEventListener('load', () => {
+
+    document.addEventListener('DOMContentLoaded', () => { 
         init();
         openTextPanel();
         muteVideo();
-      });
+    });
     
     window.addEventListener('resize', () => { 
         init();

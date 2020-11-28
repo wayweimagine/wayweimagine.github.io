@@ -1,0 +1,7 @@
+@function maxFont($defaultFontSize) {
+    @return $videoMaxHeight*$defaultFontSize/100;
+}
+
+@function minFont($defaultFontSize) {
+    @return $videoMinHeight*$defaultFontSize/100;
+}

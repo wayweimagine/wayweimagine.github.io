@@ -10,9 +10,12 @@
     </head>
 
     <body>
-        <div class="content">
+
+    <div class="content">
             <section class="video-section">
-                <video src="video/example1.MOV" autoplay loop muted></video>
+                    <div data-vimeo-id="485601980" data-vimeo-defer id="xxx"></div>
+<!--                <div data-vimeo-id="470313126" data-vimeo-defer id="xxx"></div>-->
+<!--                <video src="video/example1.MOV" autoplay loop muted></video>-->
                 <div class="scaled example1"></div>
                 <div class="scaled example2">
                     <p>InShOt</p>
@@ -27,10 +30,30 @@
                     <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."</p>
                     <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."</p>
                     <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."</p>
-                </div>            
+                </div>
                 <button class="open-text-btn js-open-text"></button>
             </section>
         </div>
     <script src="script.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+      var options = {
+        // width: 640,
+        responsive: true,
+        // transparent: false,
+        title: false,
+        byline: false,
+        muted: true,
+        loop: true,
+        autoplay: true,
+        background: true
+      };
+
+      // Will create inside the made-in-ny div:
+      var madeInNy = new Vimeo.Player('xxx', options);
+
+      // Will create inside the handstick div:
+      var handstick = new Vimeo.Player(document.getElementById('handstick'), options);
+    </script>
     </body>
 </html>

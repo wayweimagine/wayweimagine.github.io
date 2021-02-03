@@ -1,4 +1,5 @@
 @import 'variables', 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&display=swap');
 
 * {
   margin: 0;
@@ -7,14 +8,83 @@
 
 body {
   min-height: 100vh;
-  background: black;
+  background: $lightGray;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: $normalSize;
+  line-height: $lineH;
+  font-weight: $normal;
 }
 
+// ui
 button {
   cursor: pointer;
   outline: none;
 }
 
+.s-round-btn {
+  border-radius: 100%;
+  background: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  width: 7.9vh;
+  height: 7.9vh;
+  max-height: 75px;
+  max-width: 75px;
+  min-width: 15px;
+  min-height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  img {
+    height: 3.35vh;
+    max-height: 43px;
+    width: auto;
+  }
+}
+
+.link-like-button {
+  display: flex;
+}
+
+.js-map {
+  bottom: 9%;
+  right: 2%;
+  padding: 15px;
+}
+
+// text
+h1 {
+  font-size: $bigSize;
+  font-weight: $extraBold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight: $extraBold;
+  text-align: center;
+  font-size: $normalSize;
+  margin-bottom: 45px;
+}
+
+p {
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+
+  &.largeMargin {
+    margin-top: 40px;
+  }
+}
+
+.s-big-text {
+  font-weight: $bold;
+  text-transform: uppercase;
+}
+
+// sections
 .content {
   position: relative;
   height: 100vh;
@@ -32,12 +102,14 @@ button {
   }
 
   .text-section {
-    background: black;
-    color: white;
+    background: $lightGray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .text {
       overflow: auto;
-      padding: 10px;
+      padding: 40px 30px;
       box-sizing: border-box;
       width: 100%;
       height: 100%;
@@ -51,7 +123,7 @@ button {
   .open-mute {
     padding: 5px;
     bottom: 5%;
-    right: 5%;
+    right: 2%;
     font-size: 2vh;
 
     &:before {
@@ -77,6 +149,19 @@ button {
     width: 56.25vh;
     max-width: $videoMaxWidth;
     flex-shrink: 0;
+  }
+
+  .text-section {
+    background: $gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+
+    .text {
+      height: auto;
+      max-height: 100%;
+    }
   }
 
   .video-section {
@@ -127,11 +212,11 @@ button {
   .open-text-btn {
     outline: none;
     background: transparent;
-    border: 1px solid #fff;
+    border: 1px solid #000;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom: none;
-    background: #000;
+    background: $lightGray;
     width: 50px;
     height: 20px;
     position: absolute;
@@ -148,14 +233,14 @@ button {
       transform: translate(-50%, -22%);
       display: block;
       border: 8px solid transparent;
-      border-bottom: 10px solid #fff;
+      border-bottom: 10px solid #000;
     }
 
     &.js-active {
       &:before {
         transform: translate(-50%, 37%);
         border: 8px solid transparent;
-        border-top: 10px solid #fff;
+        border-top: 10px solid #000;
       }
     }
   }
@@ -201,6 +286,12 @@ button {
   font-size: 3.7vh;
 }
 
+//map 
+#map {
+  width: 100%;
+  height: 100%;
+}
+
 // media for text
 @media screen and (min-height: $videoMaxHeight + 1px) {
   .open-mute {
@@ -221,3 +312,4 @@ button {
     font-size: minFont(3.7);
   }
 }
+

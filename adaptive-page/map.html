@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Adaptive video - map</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=98a3138f-2ea5-4fc9-b67d-647e0d214972&lang=ru_RU" type="text/javascript"></script>
+    </head>
+
+    <body>
+
+    <div class="content">
+        <section id="map"></section>
+    </div>
+    <script>
+        ymaps.ready(function () {
+            let map = undefined;
+            ymaps.geolocation.get().then(function (res) {
+                const mapContainer = document.getElementById('map'),
+                    bounds = res.geoObjects.get(0).properties.get('boundedBy'),
+                    mapState = ymaps.util.bounds.getCenterAndZoom(
+                        bounds,
+                        [mapContainer.offsetWidth, mapContainer.offsetHeight]
+                    );
+
+                createMap(mapState, res.geoObjects.position);
+            }, function (e) {
+                createMap({
+                    center: [55.751574, 37.573856],
+                    zoom: 2
+                });
+            });
+            
+            function createMap (state, placemarkCoords) {
+                map = new ymaps.Map('map', state);
+                if (placemarkCoords) {
+                    map.geoObjects
+                    .add(new ymaps.Placemark(placemarkCoords, {
+                        balloonContent: 'Ваше местонахождение'
+                    }, {
+                        preset: 'islands#icon',
+                        iconColor: 'red'
+                    }))
+                }
+            }
+        });
+    </script>
+    </body>
+</html>
